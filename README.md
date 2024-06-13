@@ -53,7 +53,7 @@ While you can use this identically to Arduino IDE, this template has additional 
 ```cpp
 #include "common/SHAGEE_config.h"
 ```
-This will automatically include all the relevant files needed to develop code inside of this project as well as adding additional features if the user decides to enable them.
+This will automatically include all the relevant files needed to develop code inside of this project as well as adding all the necessary pin definitions found inside of SHAGEE_pinDefines. This will also add additional features if the user decides to enable them.
 
 To use these features, the first thing you'll need to do is add this function at the top of setup():
 ```cpp
@@ -70,5 +70,6 @@ Additionally, there are some experimental features that this will enable if you 
 (NOT RECOMMENDED) As for the external clock, you can enable that too by uncommenting the hse define in config. I wouldn't use it at all unless you're planning on doing usb stuff after comp since it hasn't been tested and isn't needed for anything else.
 
 That's about it. Good luck!
+
 -Alex Sufaj
 
