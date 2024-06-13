@@ -46,10 +46,10 @@ Uploading in pio is even easier than  in Arduino IDE. To upload, simply hit the 
 
 11. Monitoring your output
 
-To monitor the Serial output, open terminal (Top bar "Terminal" > New Terminal) then navigate to the top right of the terminal and click the drop down next to the plus sign. From there, click "Run Task" > PlatformIO > PLatformIO: Monitor.
+To monitor the Serial output, open terminal (Top bar "Terminal" > New Terminal) then navigate to the top right of the terminal and click the drop down next to the plus sign. From there, click "Run Task" > PlatformIO > PlatformIO: Monitor.
 ## Additional Information
 
-While you can use this identically to Arduino IDE, this template has additional (and strongly recommended) features to make code develop easier. To add these features, simply add this at the top of any code:
+While you can use this identically to Arduino IDE, this template has additional (and strongly recommended) features to make code development easier. To add these features, simply add this at the top of any code:
 ```cpp
 #include "common/SHAGEE_config.h"
 ```
@@ -59,9 +59,16 @@ To use these features, the first thing you'll need to do is add this function at
 ```cpp
 SHAGEE_setup();
 ```
-This will automatically setup and begin both Serial and Wire. What that means for the user is that you won't have to redefine and begin the communications yourseld. On top of that, it will also define the outputs of both LEDs as well as blink them at the beginning.
+This will automatically setup and begin both Serial and Wire. What that means for the user is that you won't have to redefine and begin the communications yourself. On top of that, it will also define the outputs of both LEDs as well as blink them three times at the beginning of code execution.
 
-Additionally, there are some experimental features that this will enable if you uncomment the cooresponding lines in platformio.ini, but proceed at your own caution or contact me.
+(You can stop reading here)
 
-Good luck!
+Additionally, there are some experimental features that this will enable if you uncomment the cooresponding lines in platformio.ini, but proceed at your own caution. These features include the ability to use the stlink programmer to view print statements or enable the external clock. 
+
+(VERY OPTIONAL) By uncommenting the print define in the config, you'll be able to use s.printf() found in common/SHAGGE_print and view the output inside of stm32cubeprogrammer in the SWV tab. It does cause some weirdness, but s.printf() is much faster than Serial and works exactly like a traditional printf() unlike Serial. There are additional ways to view the output without using cubeprogrammer, but they're very experimental and will only get proper testing after comp is over. If you are interested in the experimental stuff, let me know.
+
+(NOT RECOMMENDED) As for the external clock, you can enable that too by uncommenting the hse define in config. I wouldn't use it at all unless you're planning on doing usb stuff after comp since it hasn't been tested and isn't needed for anything else.
+
+That's about it. Good luck!
+-Alex Sufaj
 
